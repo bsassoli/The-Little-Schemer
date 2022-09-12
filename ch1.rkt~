@@ -1,0 +1,23 @@
+;; CHAPTER 1: TOYS
+;; =========================================================
+
+
+#lang racket/base
+
+(require rackunit) ; for testing
+
+;; define atom as required from preface
+(define atom?
+  (lambda (x)
+    (and (not (pair? x)) (not (null? x)))))
+(check-false (atom? (quote ())))
+
+;; EXERCISES
+;; ____________________________________
+
+(check-true (atom? 'atom))
+(check-true (atom? 'turkey))
+(check-true (atom? '1492))
+(check-true (atom? 'u))
+(check-true (atom? '*abc%))
+(check-true (list? ('atom)))

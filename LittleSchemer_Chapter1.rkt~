@@ -1,0 +1,33 @@
+#lang racket/base
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;                                    ;
+;         CHAPTER 1: TOYS            ;
+;                                    ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(require rackunit)
+
+(define atom?
+  (λ (x)
+    (and (not (pair? x)) (not (null? x)))))
+
+(check-false (atom? '()))
+
+; ATOM: a string of one or more characters (except parentheses) or numbers
+
+(check-true (atom? 'turkey))
+(check-true (atom? 1492))
+(check-true (atom? 'u))
+(check-true (atom? '*abc$))
+
+; LIST: one or more S-EXPRESSIONS enclosed y parentheses
+; The *empty* list is a list
+
+; S-EXPRESSSION: atom | list
+(check-true (atom? 1492))
+
+
+
+
+    
