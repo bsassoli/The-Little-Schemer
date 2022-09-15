@@ -53,8 +53,5 @@
   (λ (aexp)
     (car aexp)))
 
-(1st-sub-exp '(∔ 3 († 4  5)))
-(2nd-sub-exp '(∔ 3 († 4  5)))
-(operator '(∔ 3 († 4  5)))
 
 
