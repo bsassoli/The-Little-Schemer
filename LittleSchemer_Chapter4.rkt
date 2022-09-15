@@ -108,6 +108,22 @@
 (check-equal? (÷ 15 3) 5)
 (check-equal? (÷ 15 25) 0)
 
+;************************************************************************************************
+;
+; The Fifth Commandment
+;
+; When building a value with +, always use 0 for the value of the terminating line,
+; for adding 0 does not change the value of an addition.
+;
+; When building a value with x, always use 1 for the value of the terminating line,
+; for multiplying by 1 does not change the value of a multiplication.
+;
+; When building a value with cons, always consider () for the value of the terminating line.
+;
+;;************************************************************************************************
+
+
+
 (define length
   (λ (lat)
     (cond [(null? lat) 0]

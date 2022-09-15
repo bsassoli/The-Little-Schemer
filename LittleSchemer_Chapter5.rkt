@@ -26,15 +26,6 @@
 (check-equal? (rember* 'cup '((coffee) cup ((tea) cup) (and (hick)) cup))
               '((coffee) ((tea)) (and (hick))))
 
-(define lat?
-  (λ (l)
-    (cond
-      [(null? l) #t]
-      [(atom? (car l)) (lat? (cdr l))]
-      [else #f])))
-(check-true (lat? '(apple orange banana 9)))
-(check-false (lat? '(apple (orange banana) 9)))
-
 (define insertR*
   (λ (new old l)
     (cond
