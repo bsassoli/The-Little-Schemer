@@ -47,7 +47,7 @@
 
 (define 2nd-sub-exp
   (λ (aexp)
-    (cdr (cdr aexp))))
+    (car (cdr (cdr aexp)))))
 
 (define operator
   (λ (aexp)
