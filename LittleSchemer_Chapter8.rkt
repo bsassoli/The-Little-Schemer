@@ -30,6 +30,7 @@
 ;              '(beans are good))
 ; REWRITE CURRIED
 
+
 (define rember-f
   (λ (test?)
     (λ (a l)
@@ -135,7 +136,6 @@
               '(shrimp salad salad and))
 
 
-
 (define multirember&co
   (lambda (a lat col)
     (cond
@@ -177,6 +177,7 @@
 ;; Build functions to collect more than one value at a time.
 ;;**********************************************************
 
+
 ; Hint: multiinsertLR inserts new to the left of oldL and to the right of oldR in lat if oldL are oldR are different.
 (define multiinsertLR
   (λ (new oldL oldR lat)
@@ -193,30 +194,19 @@
               '(appetizer of tuna salad and grilled fish))
 
 ;(define multiinsertLD&co ())
+
+
 (define even?
   (λ (n)
     (= (modulo n 2) 0)))
 
-(define evens-only*
-  (lambda (l)
-    (cond
-      ((null? l) '())
-      ((atom? (car l))
-       (cond
-         ((even? (car l)) (cons (car l)
-                                (evens-only* (cdr l))))
-         (else (evens-only* (cdr l)))))
-      (else (cons (evens-only* (car l))
-                  (evens-only* (cdr l)))))))
 
-(define evens-only**
+(define evens-only*
   (λ (l)
     (cond [(null? l) '()]
           [(atom?  (car l))
-           (cond [(even? (car l)) (cons (car l) (evens-only** (cdr l)))]
-                 [else (evens-only** (cdr l))])]
-          [else (cons (evens-only** (car l)) (evens-only** (cdr l)))])))
-
-(evens-only* '(9 2))
-;(check-equal? (evens-only* '((9 1 2 8) 3 10 ((9 9) 7 6) 2))
-;              '((2 8) 10 (() 6) 2))
+           (cond [(even? (car l)) (cons (car l) (evens-only* (cdr l)))]
+                 [else (evens-only* (cdr l))])]
+          [else (cons (evens-only* (car l)) (evens-only* (cdr l)))])))
+(check-equal? (evens-only* '((9 1 2 8) 3 10 ((9 9) 7 6) 2))
+              '((2 8) 10 (() 6) 2))
