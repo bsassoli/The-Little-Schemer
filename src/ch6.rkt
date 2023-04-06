@@ -7,14 +7,11 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
-(require "LittleSchemer_Chapter1.rkt")
-(require "LittleSchemer_Chapter2.rkt")
-(require "LittleSchemer_Chapter3.rkt")
-(require "LittleSchemer_Chapter4.rkt")
+
 (require "LittleSchemer_Chapter5.rkt")
 
 (require rackunit)
-(provide (all-defined-out))
+(provide (all-defined-out) (all-from-out))
 
 
 (define numbered?

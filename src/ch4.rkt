@@ -7,12 +7,10 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
-(require "LittleSchemer_Chapter1.rkt")
-(require "LittleSchemer_Chapter2.rkt")
 (require "LittleSchemer_Chapter3.rkt")
 
 (require rackunit)
-(provide (all-defined-out))
+(provide (all-from-out "LittleSchemer_Chapter3.rkt") (all-defined-out))
 
 (define ∔
   (λ (a b)

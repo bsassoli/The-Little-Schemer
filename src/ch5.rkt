@@ -8,13 +8,11 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
-(require "LittleSchemer_Chapter1.rkt")
-(require "LittleSchemer_Chapter2.rkt")
-(require "LittleSchemer_Chapter3.rkt")
+
 (require "LittleSchemer_Chapter4.rkt")
 
 (require rackunit)
-(provide (all-defined-out))
+(provide (all-from-out) (all-defined-out))
 
 (define rember*
   (λ (a l)

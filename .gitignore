@@ -1,4 +1,4 @@
 compiled
 *.rkt~
-
-
+.NERD_tree_1.swp
+.DS_Store
