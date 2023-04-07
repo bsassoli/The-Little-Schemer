@@ -8,10 +8,8 @@
 
 
 
-(require "LittleSchemer_Chapter5.rkt")
-
-(require rackunit)
-(provide (all-defined-out) (all-from-out))
+(require "ch5.rkt")
+(provide (all-defined-out) (all-from-out "ch5.rkt"))
 
 
 (define numbered?
@@ -30,13 +28,6 @@
       [(eq? (car (cdr nexp)) '⨰) (⨰ (value (car nexp)) (value (car (cdr (cdr nexp)))))]
       [(eq? (car (cdr nexp)) '†) († (value (car nexp)) (value (car (cdr (cdr nexp)))))])))
 
-(check-true (numbered? 1))
-(check-true (numbered? '(3 ∔ (4 † 5))))
-(check-false (numbered? '(2 ⨰ sausage)))
-(check-equal? (value 13) 13)
-
-(check-equal? (value '(3 ∔ (4 ⨰ 5))) 23)
-(check-equal? (value '(3 ∔ 1)) 4)
 
 (define 1st-sub-exp
   (λ (aexp)

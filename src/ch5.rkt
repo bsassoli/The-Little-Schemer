@@ -9,10 +9,10 @@
 
 
 
-(require "LittleSchemer_Chapter4.rkt")
+(require "ch4.rkt")
 
 (require rackunit)
-(provide (all-from-out) (all-defined-out))
+(provide (all-from-out "ch4.rkt") (all-defined-out))
 
 (define rember*
   (λ (a l)
